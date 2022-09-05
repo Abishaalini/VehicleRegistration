@@ -3,13 +3,17 @@ import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 
+
 @Entity
 public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
+
+    @NotNull
     private String plate_number;
 
+    @NotNull
     private String owner;
 
     @NotNull

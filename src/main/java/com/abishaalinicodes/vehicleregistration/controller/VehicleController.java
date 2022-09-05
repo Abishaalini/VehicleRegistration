@@ -5,12 +5,15 @@ import com.abishaalinicodes.vehicleregistration.model.Vehicle;
 import com.abishaalinicodes.vehicleregistration.repository.VehicleRepository;
 import com.abishaalinicodes.vehicleregistration.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @CrossOrigin
 @RestController
+@Validated
 @RequestMapping("/registration")
 
 public class VehicleController {
@@ -21,9 +24,9 @@ public class VehicleController {
     private VehicleRepository vehicleRepository;
 
     @PostMapping("/vehicles")
-    public  String add(@RequestBody Vehicle vehicle) {
+    public  String add(@Valid @RequestBody Vehicle vehicle) {
         if(vehicleService.registerVehicle(vehicle)==null){
-            return "invalid number plate";
+            return "invalid License number";
         }
            vehicleService.registerVehicle(vehicle);
            return "New vehicle is registered" ;
