@@ -82,7 +82,7 @@ const AddVehicleComponent=()=>{
                                         <input placeholder='Owner Name' name='owner' className='form-control' style={{border: "2px solid #F4EEDB",borderRadius: "5px",padding: "10px 15px",margin:" 9px 0px"}} value={owner} onChange={(e)=>setOwner(e.target.value)}/>
                                     </div>
                                     <div className='form-group'>
-                                        <label style={{fontFamily:"serif",fontWeight:"normal",fontSize:"18px"}}>Plate number: </label>
+                                        <label style={{fontFamily:"serif",fontWeight:"normal",fontSize:"18px"}}>License number: </label>
                                         <input placeholder='Plate number' name='plate_number' className='form-control' style={{border: "2px solid #F4EEDB",borderRadius: "5px",padding: "10px 15px",margin:" 9px 0px"}} value={plate_number} onChange={(e)=>setPlate_number(e.target.value)}/>
                                         
                                     {error && <div class="alert alert-danger alert-dismissible fade show" style={{fontSize:"13px", padding:" 5px 10px"}}><strong>error: </strong>{error}</div>}
