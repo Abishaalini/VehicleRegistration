@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Service
@@ -16,18 +15,18 @@ public class VehicleServiceImpl implements VehicleService {
     @Override
     public Vehicle registerVehicle(Vehicle vehicle) {
         vehicle.setType(TypeIdentifier(vehicle.getPlate_number()));
-        if(validatenumberplate(vehicle.getPlate_number())=="Invalid"){
-            return null;
+        if(validatenumberplate(vehicle.getPlate_number())){
+            return vehicleRepository.save(vehicle);
         }
-        vehicle.setPlate_number(validatenumberplate(vehicle.getPlate_number()));
-        return vehicleRepository.save(vehicle);
+        return null;
     }
     @Override
     public List<Vehicle> getAllVehicles() {
         return vehicleRepository.findAll();
     }
 
-    public String validatenumberplate(String inputnumplate){
+    //function implementation to validate the license number-> returns true or false
+    public Boolean validatenumberplate(String inputnumplate){
         String pattern1 = "[A-Z]?[A-Z]?[\s]*[A-Z]{2,4}[\s]*[\\-][\s]*[0-9]{4}";
         String pattern2 = "[0-9]{2,4}[\s]*[\\-][\s]*[0-9]{4}";
         String pattern3 = "[0-9]{1,3}[\s]*ශ්\u200Dරි[\s]*[0-9]{4}";
@@ -38,11 +37,12 @@ public class VehicleServiceImpl implements VehicleService {
         String m2 = String.valueOf(matches2);
         String m3 = String.valueOf(matches3);
         if(m1=="true" || m2=="true" || m3=="true"){
-            return inputnumplate;
+            return true;
         }
-        return "Invalid";
+        return false;
     }
 
+    //function implementation to determine the license number type-> returns type
     public String TypeIdentifier(String input){
         String pattern1 = "[A-Z]?[A-Z]?[\s]*[A-Z]{2,4}[\s]*[\\-][\s]*[0-9]{4}";
         String pattern2 = "[0-9]{2,4}[\s]*[\\-][\s]*[0-9]{4}";

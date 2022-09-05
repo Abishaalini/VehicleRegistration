@@ -43,10 +43,10 @@ const ListVehicleComponent=()=> {
                     <table className="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>Vehicle number plate</th>
-                                <th>Vehicle plate type</th>
-                                <th>Vehicle Owner name</th>
-                                <th>Actions</th>
+                                <th>License Number</th> 
+                                <th>License type</th>
+                                <th>Vehicle Owner Name</th>
+                                <th> Actions </th>
 
                             </tr>
                         </thead>
@@ -60,7 +60,7 @@ const ListVehicleComponent=()=> {
                                          <td>{vehicle.owner}</td>
                                          <td>
                                             <Link className='btn btn-info' to={`/update-vehicles/${vehicle.id}`}>Update</Link>
-                                            <button className='btn btn-danger' onClick={()=>deleteVehicle(vehicle.id)} style={{marginLeft:"30px"}}>Delete</button>
+                                            <button className='btn btn-danger' onClick={()=>deleteVehicle(vehicle.id)} style={{marginLeft:"50px"}}>Delete</button>
                                          </td>
                                     </tr>
                                 )

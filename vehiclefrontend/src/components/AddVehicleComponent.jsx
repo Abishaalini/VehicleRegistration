@@ -66,17 +66,15 @@ const AddVehicleComponent=()=>{
                 <br></br>
                 <div className='container'>
                     <div className='row'>
-                        <div className='card col-md-6 offset-md-3 offset-md-3' style={{width:"900px", margin:"auto",height:"450px"}}>
-                            <br></br>
-                            
-                            <br></br>
+                        <div className='card col-md-6 offset-md-3 offset-md-3' style={{width:"900px", margin:"auto",height:"460px"}}>
+                           
                             <div className='card-body' style={{display:'flex',flexWrap:'wrap',alignContent: 'space-between'}}>
                                 <div style={{width:"400px"}}>
                                         {
                                         title()
-                                    }
+                                       }
                                     <br></br>
-                                    <img src="images/OIP.jpg"></img>
+                                    <img src="http://localhost:3000/images/OIP.jpg"></img>
                                 </div>
                                 <form style={{width:"400px", height:"200px" , margin:"auto"}}>
                                     <div className='form-group'>
@@ -95,6 +93,7 @@ const AddVehicleComponent=()=>{
                                     
                                 </form>
                             </div>
+                            <Link to="/vehicles" className="btn" style={{marginLeft:"675px",marginBottom:"10px",backgroundColor:"#FCF7E7"}}>Registered vehicles</Link>
                         </div>
                     </div>
                 </div>

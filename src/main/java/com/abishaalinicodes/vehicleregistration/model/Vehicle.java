@@ -9,6 +9,7 @@ public class Vehicle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
     private String plate_number;
+
     private String owner;
 
     @NotNull
