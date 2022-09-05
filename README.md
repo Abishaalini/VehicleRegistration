@@ -5,6 +5,8 @@ Technology Stack
  .React.js    - Frontend
  .REST        - API technique
  .MySQL       - Database
+ .Postman     - To Test API
+
 
 
 Here I have developed the application which facilitates the user,
